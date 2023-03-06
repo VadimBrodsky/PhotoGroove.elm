@@ -32,6 +32,14 @@ viewThumbnail selectedUrl thumb =
         []
 
 
+update msg model =
+    if msg.description == "ClickedPhoto" then
+        { model | selectedUrl = msg.data }
+
+    else
+        model
+
+
 main =
     view initialModel
 
